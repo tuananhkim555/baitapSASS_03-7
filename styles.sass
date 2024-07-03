@@ -1,0 +1,384 @@
+// Variables
+$font-color: #404145;
+$highlight-color: #1dbf73;
+$background-color: #fff;
+$secondary-background-color: #f7f7f7;
+$button-bg-color: #1dbf73;
+$button-text-color: #fff;
+$border-color: #e0e0e0;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Global styles
+body {
+  font-family: Arial, sans-serif;
+  color: $font-color;
+  margin: 0;
+  padding: 0;
+  background-color: $secondary-background-color;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+// Header
+.header-package {
+  background-color: $background-color;
+  border-bottom: 1px solid $border-color;
+  .header-row {
+    @include flex-center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  .site-logo {
+    svg {
+      fill: $font-color;
+    }
+  }
+  .fiverr-header-search {
+    .search-form {
+      display: flex;
+      input {
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: 4px 0 0 4px;
+      }
+      .submit-button {
+        background-color: $highlight-color;
+        border-radius: 0 4px 4px 0;
+        svg {
+          fill: $button-text-color;
+        }
+      }
+    }
+  }
+  .fiverr-nav {
+    ul {
+      list-style: none;
+      display: flex;
+      li {
+        margin: 0 10px;
+        .nav-link {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// Hero section
+.mp-hero {
+  background: url('https://assetsv2.fiverrcdn.com/assets/v2_photos/packages-lp/bg-first-hero-d92a52e389008a9c36e1cb59634ae244.jpg') no-repeat center center;
+  background-size: cover;
+  color: $button-text-color;
+  text-align: center;
+  padding: 60px 20px;
+  h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .btn-lrg-standard {
+    font-size: 18px;
+    padding: 15px 30px;
+    background-color: $highlight-color;
+    color: $button-text-color;
+    border-radius: 4px;
+  }
+  .hero-stats {
+    margin-top: 40px;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 0 20px;
+        font-size: 16px;
+        strong {
+          display: block;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+// Community section
+.community {
+  background-color: $background-color;
+  text-align: center;
+  padding: 40px 20px;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li {
+      margin: 10px;
+      background-color: $secondary-background-color;
+      padding: 20px;
+      border-radius: 4px;
+      h6 {
+        font-size: 18px;
+      }
+    }
+    .cta {
+      background-color: $highlight-color;
+      color: $button-text-color;
+      .btn-lrg-standard {
+        background-color: $button-bg-color;
+        color: $button-text-color;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// How it works section
+.how-to-3-stages {
+  text-align: center;
+  padding: 50px 20px;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0 20px;
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Education section
+.education {
+  background-color: $background-color;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  .education-description {
+    flex: 1;
+    padding: 20px;
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+  .education-video {
+    flex: 1;
+    padding: 20px;
+    .btn-video-player-wrapper {
+      position: relative;
+      .btn-video-player {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background-color: $highlight-color;
+        border-radius: 50%;
+        svg {
+          fill: $button-text-color;
+        }
+      }
+      video {
+        width: 100%;
+        border-radius: 4px;
+      }
+      .video-description {
+        margin-top: 10px;
+        .description-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          h3 {
+            font-size: 18px;
+            margin: 0;
+          }
+          .free-badge {
+            background-color: $highlight-color;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: $button-text-color;
+          }
+        }
+        .description-rating {
+          display: flex;
+          align-items: center;
+          .star-rating-s12 {
+            margin-right: 5px;
+          }
+          .rating-value {
+            font-size: 16px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Buyer stories section
+.buyers-stories {
+  background-color: $background-color;
+  padding: 40px 20px;
+  text-align: center;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      margin: 10px;
+      background-color: $secondary-background-color;
+      padding: 20px;
+      border-radius: 4px;
+      blockquote {
+        font-size: 16px;
+        margin: 0;
+        cite {
+          display: block;
+          margin-top: 10px;
+          font-size: 14px;
+          color: $highlight-color;
+        }
+      }
+    }
+  }
+}
+
+// Q&A section
+.component-accordion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: $secondary-background-color;
+  .lp {
+    margin: 20px;
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 4px;
+    header {
+      font-size: 18px;
+      cursor: pointer;
+      &:after {
+        content: '+';
+        float: right;
+      }
+    }
+    .panel {
+      display: none;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+}
+
+// Footer
+.footer-package {
+  background-color: $background-color;
+  border-top: 1px solid $border-color;
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    .left {
+      .fiverr-logo-footer {
+        svg {
+          fill: $font-color;
+        }
+      }
+      .legal {
+        display: flex;
+        .privacy {
+          margin-right: 20px;
+          a {
+            color: $font-color;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      .social {
+        list-style: none;
+        display: flex;
+        li {
+          margin: 0 10px;
+          .social-link {
+            display: flex;
+            align-items: center;
+            .social-icon {
+              margin-left: 5px;
+              svg {
+                fill: $font-color;
+              }
+            }
+          }
+        }
+      }
+      .settings-buttons {
+        display: flex;
+        .locale-settings-package {
+          margin-right: 20px;
+          .selection-trigger {
+            background-color: transparent;
+            border: 1px solid $border-color;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            .trigger-icon {
+              margin-right: 5px;
+              svg {
+                fill: $font-color;
+              }
+            }
+          }
+        }
+        .accessibility-button {
+          background-color: transparent
